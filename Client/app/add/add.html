@@ -1,0 +1,46 @@
+
+<div>
+  <form ng-model="submitJob" ng-submit="addNew()">
+    <div class="form-group">
+      <label for="companyName">Company Name</label>
+      <input ng-model="job.company" type="text" class="form-control" id="companyName" placeholder="What is the company called?">
+    </div>
+
+    <div class="form-group">
+      <label for="jobTitle">Job Title</label>
+      <input ng-model="job.title" type="text" class="form-control" id="jobTitle" placeholder="What's the job title?">
+    </div>
+
+    <div class="form-group">
+      <label for="location">Location</label>
+      <input ng-model="job.location" type="text" class="form-control" id="location" placeholder="Where is it?">
+    </div>
+
+    <div class="form-group">
+      <label for="interestLevel">Interest Level</label>
+      <select ng-model="job.interestLevel" class="form-control" id="interestLevel">
+        <option>1 - I could take it or leave it</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5 - This is my dream job</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="url">Link to Job Posting</label>
+      <input ng-model="job.url" type="url" class="form-control" id="url" placeholder="Where is the job posted?">
+    </div>
+
+    <div class="form-check">
+      <label class="form-check-label">
+        <input ng-model="job.knowSomeone" type="checkbox" class="form-check-input">
+        I Know Someone Here
+      </label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add it to the List!</button>
+
+  </form>
+
+</div>
