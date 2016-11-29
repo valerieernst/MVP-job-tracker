@@ -18,7 +18,4 @@ angular.module('jobHunter', [
 		controller: 'addController'
 	});
 
-})
-// .run(function(){
-//   console.log('run executed');
-// });
+});
