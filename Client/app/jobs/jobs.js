@@ -1,9 +1,15 @@
 angular.module('jobHunter.jobs', [])
-.controller('jobsController', function($scope) {
+.controller('jobsController', function($scope, $http) {
 	$scope.job = {};
 
 	var renderJobs = function() {
-		$scope.job.data = [{'name': 'job1', 'company': 'company1'}]
+		return $http({
+			method: 'GET',
+			url: '/api/jobs',
+		})
+		.then(function(resp) {
+			console.log('here is the resp',resp);
+		})
 	};
 
 	renderJobs();
