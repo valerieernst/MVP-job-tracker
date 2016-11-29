@@ -1,15 +1,24 @@
 angular.module('jobHunter.jobs', [])
-.controller('jobsController', function($scope, $http) {
-	$scope.job = {};
+.controller('jobsController', function($scope, httpReq) {
 
-	var renderJobs = function() {
-		return $http({
-			method: 'GET',
-			url: '/api/jobs',
-		})
-		.then(function(resp) {
-			console.log('here is the resp',resp);
-		})
+	$scope.data = {};
+
+  $scope.editJob = function(job) {
+    job.editing = true;
+  };
+
+  $scope.doneEditing = function(job) {
+    job.editing = false;
+
+    httpReq.update(job);
+  };
+
+
+	 var renderJobs = function() {
+    httpReq.getAll()
+    .then(function(resp) {
+      $scope.data.jobs = resp
+    });
 	};
 
 	renderJobs();

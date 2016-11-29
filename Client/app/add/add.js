@@ -1,13 +1,8 @@
  angular.module('jobHunter.add', [])
-.controller('addController', function($scope, $http) {
+.controller('addController', function($scope, httpReq) {
 
 	$scope.addNew = function() {
-		console.log('addNew being called!', $scope.job)
-		return $http({
-			method: 'POST',
-      url: '/api/jobs',
-      data: $scope.job
-		});
+    httpReq.send($scope.job);
 	}
 
 });

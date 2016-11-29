@@ -1,6 +1,7 @@
 angular.module('jobHunter', [
 	'jobHunter.jobs',
 	'jobHunter.add',
+	'jobHunter.httpFactory',
 	'ui.router'
 ])
 .config(function($httpProvider, $stateProvider, $urlRouterProvider) {

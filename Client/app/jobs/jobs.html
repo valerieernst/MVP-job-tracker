@@ -4,41 +4,59 @@
 	<title></title>
 </head>
 <body>
-<table class="table table-striped">
-    <thead>
-      <tr>
-        <!-- <th>#</th> -->
-        <th>Company Name</th>
-        <th>Job Title</th>
-        <th>Location</th>
-        <th>Interest Level</th>
-        <th>Job Posting</th>
-        <th>Contact</th>
-        <th>App Submitted</th>
-        <th>Final Outcome</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <!-- <th scope="row">1</th> -->
-        <td>Sample</td>
-        <td>Data</td>
-        <td>@Here</td>
-        <td>Sample</td>
-        <td>Data</td>
-        <td>@Here</td>
-      </tr>
-      <tr>
-        <!-- <th scope="row">1</th> -->
-        <td>Sample</td>
-        <td>Data</td>
-        <td>@Here</td>
-        <td>Sample</td>
-        <td>Data</td>
-        <td>@Here</td>
-      </tr>
-    </tbody>
-  </table>
+
+    <table class="table table-striped" show-filter="true">
+      <thead>
+        <tr>
+          <!-- <th>#</th> -->
+          <th>Company Name</th>
+          <th>Job Title</th>
+          <th>Location</th>
+          <th>Interest Level</th>
+          <th>Job Posting</th>
+          <th>Contact</th>
+          <th>App Submitted</th>
+          <th>Final Outcome</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat='job in data.jobs'>
+          <!-- <th scope="row"></th> -->
+          <td>
+            <span ng-hide="job.editing" ng-dblclick="editJob(job)">{{job.company}}</span>
+            <input ng-show="job.editing" ng-model="job.company" ng-blur="doneEditing(job)" autofocus />
+          </td>
+          <td>
+            <span ng-hide="job.editing" ng-dblclick="editJob(job)">{{job.title}}</span>
+            <input ng-show="job.editing" ng-model="job.title" ng-blur="doneEditing(job)" autofocus />
+          </td>
+          <td>
+            <span ng-hide="job.editing" ng-dblclick="editJob(job)">{{job.location}}</span>
+            <input ng-show="job.editing" ng-model="job.location" ng-blur="doneEditing(job)" autofocus />
+          </td>
+          <td>
+            <span ng-hide="job.editing" ng-dblclick="editJob(job)">{{job.interestLevel}}</span>
+            <input ng-show="job.editing" ng-model="job.interestLevel" ng-blur="doneEditing(job)" autofocus />
+          </td>
+          <td>
+            <span ng-hide="job.editing" ng-dblclick="editJob(job)">{{job.url}}</span>
+            <input ng-show="job.editing" ng-model="job.url" ng-blur="doneEditing(job)" autofocus />
+          </td>
+          <td>
+            <span ng-hide="job.editing" ng-dblclick="editJob(job)">{{job.knowSomeone}}</span>
+            <input ng-show="job.editing" ng-model="job.knowSomeone" ng-blur="doneEditing(job)" autofocus />
+          </td>
+          <td>
+            <span ng-hide="job.editing" ng-dblclick="editJob(job)">{{job.appSubmitted}}</span>
+            <input ng-show="job.editing" ng-model="job.appSubmitted" ng-blur="doneEditing(job)" autofocus />
+          </td>
+          <td>
+            <span ng-hide="job.editing" ng-dblclick="editJob(job)">{{job.outcome}}</span>
+            <input ng-show="job.editing" ng-model="job.outcome" ng-blur="doneEditing(job, $event)" autofocus />
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
 </body>
 </html>
