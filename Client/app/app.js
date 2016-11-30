@@ -17,6 +17,11 @@ angular.module('jobHunter', [
 		url: '/add',
 		templateUrl: 'app/add/add.html',
 		controller: 'addController'
+	})
+	.state('current', {
+		url: '/current',
+		templateUrl: 'app/jobs/current.html',
+		controller: 'jobsController'
 	});
 
 });

@@ -1,6 +1,6 @@
 
-<div>
-  <form ng-model="submitJob" ng-submit="addNew()">
+<div class="col-lg-6">
+  <form name='submitJob' ng-model="submitJob" ng-submit="addNew()">
     <div class="form-group">
       <label for="companyName">Company Name</label>
       <input ng-model="job.company" type="text" class="form-control" id="companyName" placeholder="What is the company called?">
@@ -18,7 +18,7 @@
 
     <div class="form-group">
       <label for="interestLevel">Interest Level</label>
-      <select ng-model="job.interestLevel" class="form-control" id="interestLevel">
+      <select ng-model="job.interestLevel" class="form-control" id="interestLevel" placeholder="1 is low, 5 is high.">
         <option>1</option>
         <option>2</option>
         <option>3</option>
@@ -29,15 +29,13 @@
     </div>
 
     <div class="form-group">
-      <label for="url">Link to Job Posting</label>
-      <input ng-model="job.url" type="url" class="form-control" id="url" placeholder="Where is the job posted?">
+      <label for="knowSomeone">I Know Someone Here</label>
+      <input ng-model="job.knowSomeone" type="text" class="form-control" id="knowSomeone" placeholder="Who is it?">
     </div>
 
-    <div class="form-check">
-      <label class="form-check-label">
-        <input ng-model="job.knowSomeone" type="checkbox" class="form-check-input">
-        I Know Someone Here
-      </label>
+    <div class="form-group">
+      <label for="url">Link to Job Posting</label>
+      <input ng-model="job.url" type="url" class="form-control" id="url" placeholder="Where is the job posted?">
     </div>
 
     <button type="submit" class="btn btn-primary">Add it to the List!</button>
