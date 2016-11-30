@@ -3,6 +3,9 @@ angular.module('jobHunter.jobs', [])
 
 	$scope.data = {};
 
+  $scope.sortHeader = 'interestLevel';
+  $scope.sortReverse = true;
+
   $scope.editJob = function(job) {
     job.editing = true;
   };

@@ -21,6 +21,7 @@ angular.module('jobHunter.httpFactory', [])
       console.log('Successful post!');
     });
 	};
+  
 
 	var update = function(job) {
     return $http({

@@ -1,62 +1,94 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-
-    <table class="table table-striped" show-filter="true">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <input ng-model="search" type="text" class="form-control" placeholder="Search for...">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button">Find It!</button>
+      </span>
+    </div>
+  </div>
+  <div class="col-lg-12">
+    <table class="table table-striped">
       <thead>
         <tr>
           <!-- <th>#</th> -->
-          <th>Company Name</th>
-          <th>Job Title</th>
-          <th>Location</th>
-          <th>Interest Level</th>
-          <th>Job Posting</th>
-          <th>Contact</th>
-          <th>App Submitted</th>
-          <th>Final Outcome</th>
+          <th>
+            <a href="#" ng-click="sortHeader = 'company'; sortReverse = !sortReverse" >
+              Company Name
+            </a>
+          </th>
+          <th>
+            <a href="#" ng-click="sortHeader = 'title'; sortReverse = !sortReverse" >
+              Job Title
+            </a>
+          </th>
+          <th>
+            <a href="#" ng-click="sortHeader = 'location'; sortReverse = !sortReverse" >
+              Location
+            </a>
+          </th>
+          <th>
+            <a href="#" ng-click="sortHeader = 'interestLevel'; sortReverse = !sortReverse" >
+              Interest Level
+            </a>
+          </th>
+          <th>
+            <a href="#" ng-click="sortHeader = 'url'; sortReverse = !sortReverse" >
+              Job Posting
+            </a>
+          </th>
+          <th>
+            <a href="#" ng-click="sortHeader = 'knowSomeone'; sortReverse = !sortReverse" >
+              Contact
+            </a>
+          </th>
+          <th>
+            <a href="#" ng-click="sortHeader = 'appSubmitted'; sortReverse = !sortReverse" >
+              App Submitted
+            </a>
+          </th>
+          <th>
+            <a href="#" ng-click="sortHeader = 'outcome'; sortReverse = !sortReverse" >
+              Status
+            </a>
+          </th>
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat='job in data.jobs'>
+        <tr ng-repeat='job in data.jobs | filter:search | orderBy:sortHeader:sortReverse'>
           <!-- <th scope="row"></th> -->
           <td>
             <span ng-hide="job.editing" ng-dblclick="editJob(job)">{{job.company}}</span>
-            <input ng-show="job.editing" ng-model="job.company" ng-blur="doneEditing(job)" autofocus />
+            <input ng-show="job.editing" ng-model="job.company" ng-blur="doneEditing(job)"/>
           </td>
           <td>
             <span ng-hide="job.editing" ng-dblclick="editJob(job)">{{job.title}}</span>
-            <input ng-show="job.editing" ng-model="job.title" ng-blur="doneEditing(job)" autofocus />
+            <input ng-show="job.editing" ng-model="job.title" ng-blur="doneEditing(job)"/>
           </td>
           <td>
             <span ng-hide="job.editing" ng-dblclick="editJob(job)">{{job.location}}</span>
-            <input ng-show="job.editing" ng-model="job.location" ng-blur="doneEditing(job)" autofocus />
+            <input ng-show="job.editing" ng-model="job.location" ng-blur="doneEditing(job)"/>
           </td>
           <td>
             <span ng-hide="job.editing" ng-dblclick="editJob(job)">{{job.interestLevel}}</span>
-            <input ng-show="job.editing" ng-model="job.interestLevel" ng-blur="doneEditing(job)" autofocus />
+            <input ng-show="job.editing" ng-model="job.interestLevel" ng-blur="doneEditing(job)"/>
           </td>
           <td>
             <span ng-hide="job.editing" ng-dblclick="editJob(job)">{{job.url}}</span>
-            <input ng-show="job.editing" ng-model="job.url" ng-blur="doneEditing(job)" autofocus />
+            <input ng-show="job.editing" ng-model="job.url" ng-blur="doneEditing(job)"/>
           </td>
           <td>
             <span ng-hide="job.editing" ng-dblclick="editJob(job)">{{job.knowSomeone}}</span>
-            <input ng-show="job.editing" ng-model="job.knowSomeone" ng-blur="doneEditing(job)" autofocus />
+            <input ng-show="job.editing" ng-model="job.knowSomeone" ng-blur="doneEditing(job)"/>
           </td>
           <td>
             <span ng-hide="job.editing" ng-dblclick="editJob(job)">{{job.appSubmitted}}</span>
-            <input ng-show="job.editing" ng-model="job.appSubmitted" ng-blur="doneEditing(job)" autofocus />
+            <input ng-show="job.editing" ng-model="job.appSubmitted" ng-blur="doneEditing(job)"/>
           </td>
           <td>
             <span ng-hide="job.editing" ng-dblclick="editJob(job)">{{job.outcome}}</span>
-            <input ng-show="job.editing" ng-model="job.outcome" ng-blur="doneEditing(job, $event)" autofocus />
+            <input ng-show="job.editing" ng-model="job.outcome" ng-blur="doneEditing(job, $event)"/>
           </td>
         </tr>
       </tbody>
     </table>
-
-</body>
-</html>
+  </div>

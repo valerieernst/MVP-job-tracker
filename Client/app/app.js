@@ -5,7 +5,7 @@ angular.module('jobHunter', [
 	'ui.router'
 ])
 .config(function($httpProvider, $stateProvider, $urlRouterProvider) {
-	$urlRouterProvider.otherwise('/blank');
+	$urlRouterProvider.otherwise('/jobs');
 
 	$stateProvider
 	.state('jobs', {
