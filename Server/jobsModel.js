@@ -10,7 +10,8 @@ var jobSchema = new mongoose.Schema({
 	url: String,
 	knowSomeone: String,
 	appSubmitted: Boolean,
-	outcome: String
+	outcome: String,
+  active: Boolean
 });
 
 
@@ -39,7 +40,8 @@ module.exports.createJob = function(req, res) {
       url: body.url,
       knowSomeone: body.knowSomeone || 'No',
       appSubmitted: false,
-      outcome: 'Pending'
+      outcome: 'Pending',
+      active: true
     }, 
     function(err, resp) {
       if(err) {
@@ -63,7 +65,8 @@ module.exports.updateJob = function(req, res) {
       url: body.url,
       knowSomeone: body.knowSomeone,
       appSubmitted: body.appSubmitted,
-      outcome: body.outcome
+      outcome: body.outcome,
+      active: body.active
     }, 
       function(err, resp) {
         if(err) { console.log('Update failed!'); }

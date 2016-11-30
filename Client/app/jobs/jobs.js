@@ -5,6 +5,15 @@ angular.module('jobHunter.jobs', [])
 
   $scope.sortHeader = 'interestLevel';
   $scope.sortReverse = true;
+  $scope.filterToggle = false;
+
+  $scope.filterAll = function(job) {
+    if($scope.filterToggle) {
+      return job.active === true;
+    } else {
+      return job
+    }
+  };
 
   $scope.editJob = function(job) {
     job.editing = true;
