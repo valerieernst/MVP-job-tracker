@@ -11,10 +11,10 @@
 <div class="col-lg-6">
   <div class="btn-group float-xs-right" data-toggle="buttons">
     <label ng-click="filterToggle = !filterToggle" class="btn btn-primary active">
-      <input type="radio" name="options" id="option1" autocomplete="off" checked> Show All Jobs
+      <input type="radio" name="options" id="option1" autocomplete="off" checked>All Jobs
     </label>
     <label class="btn btn-primary" ng-click="filterToggle = !filterToggle">
-      <input type="radio" name="options" id="option2" autocomplete="off"> Show Only Current
+      <input type="radio" name="options" id="option2" autocomplete="off">Current Jobs
     </label>
   </div>
 </div>
@@ -112,7 +112,7 @@
         </td>
 
         <td>
-          <span ng-hide="job.editing" ng-dblclick="editJob(job)">{{job.url}}</span>
+          <a href='{{job.url}}' ng-hide="job.editing" ng-dblclick="editJob(job)">{{job.url}}</a>
           <input class="form-control" ng-show="job.editing" ng-model="job.url" ng-blur="doneEditing(job)"/>
         </td>
 

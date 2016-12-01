@@ -5,15 +5,16 @@ var jobSchema = new mongoose.Schema({
 	id: String,
 	company: String,
 	title: String,
-	location: String,
-	interestLevel: Number,
-	url: String,
-	knowSomeone: String,
-	appSubmitted: Boolean,
-	outcome: String,
+  location: String,
+  interestLevel: Number,
+  url: String,
+  knowSomeone: String,
+  appSubmitted: Boolean,
+  outcome: String,
   active: Boolean
 });
 
+var Job = mongoose.model('Job', jobSchema);
 
 module.exports.getJobs = function(req, res) {
     //USED TO CLEAR DATABASE!
@@ -75,5 +76,3 @@ module.exports.updateJob = function(req, res) {
       })
   }
 
-
-var Job = mongoose.model('Job', jobSchema);
